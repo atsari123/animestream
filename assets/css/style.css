@@ -1,4 +1,3 @@
-/* Global Styles */
 :root {
     --primary-color: #83B4FF;
     --secondary-color: #5A72A0;
@@ -17,7 +16,10 @@
 /* Navbar */
 .navbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--bg-color);
+    padding: 10px 20px;
 }
 .navbar-brand {
     color: var(--primary-color);
@@ -31,8 +33,12 @@
     color: var(--secondary-color);
     font-style: oblique;
 }
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
 .navbar-nav .nav-item {
-    margin: 0 5px;
+    margin: 0 10px;
     color: var(--secondary-color);
     font-size: 16px;
 }
@@ -40,26 +46,41 @@
     color: var(--secondary-color);
     text-decoration: underline;
 }
+@media screen and (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+}
 /* End of Navbar */
 
 /* Hero Section */
-#home{
+#home {
     margin-top: 10px;
     height: 100vh;
     background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
 }
 #home h1 {
     color: var(--secondary-color);
     font-size: 48px;
     font-weight: bold;
     font-style: oblique;
-    
 }
 #home h2 {
     color: var(--secondary-color);
     font-size: 24px;
     font-weight: normal;
     font-style: italic;
+    margin-top: 10px;
 }
 #home .btn {
     background-color: var(--secondary-color);
@@ -76,13 +97,9 @@
 #home img {
     width: 100%;
     height: auto;
-    margin-top: 10px;
-    margin-left: 20px;
+    margin-top: 20px;
 }
 @media screen and (max-width: 768px) {
-   #home {
-        margin-top: 20px;
-    }
     #home h1 {
         font-size: 32px;
     }
@@ -92,15 +109,6 @@
     #home .btn {
         font-size: 14px;
         padding: 8px 16px;
-        margin-top: 10px;
-        margin-bottom: 50px;
-    }
-    #home img {
-        width: 100%;
-        height: auto;
-        padding: 20px 20px;
-        margin-top: 100px;
-        margin-left: 0;
     }
 }
 /* End of Hero Section */
@@ -109,12 +117,12 @@
 #about {
     background-color: var(--secondary-color);
     color: var(--bg-color);
-    padding: 50px 0;
+    padding: 50px 20px;
+    text-align: center;
 }
 #about h2 {
     font-size: 36px;
     margin-bottom: 20px;
-    text-align: center;
     font-style: oblique;
     font-weight: bold;
 }
@@ -130,7 +138,6 @@
     width: 100%;
     height: auto;
     margin-top: 20px;
-    margin-left: 20px;
     border-radius: 20px;
 }
 #about .btn {
@@ -146,20 +153,13 @@
     color: var(--text-color);
 }
 #about .video .embed-responsive-item {
-    margin-top: 10px;
-    margin-left: 90px;
+    margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.993);
 }
 @media screen and (max-width: 768px) {
-    #about {
-        margin-top: 95px;
-    }
-    #about img {
-        width: 100%;
-        height: auto;
-        margin-top: 20px;
-        margin-left: 0;
+    #about h2 {
+        font-size: 24px;
     }
     #about h3 {
         font-size: 20px;
@@ -170,16 +170,10 @@
     #about .btn {
         font-size: 14px;
         padding: 8px 16px;
-        margin-top: 10px;
     }
     #about .video .embed-responsive-item {
-        margin-top: 10px;
-        border-radius: 10px;
-        width: 50%;
-        height: auto;
-        margin-top: 10px;
-        margin-left: 90px;
-        box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.993);
+        width: 100%;
+        margin-left: 0;
     }
 }
 /* End of About Section */
@@ -188,15 +182,18 @@
 #stream {
     background-color: var(--bg-color);
     color: var(--secondary-color);
-    padding: 50px 0;
+    padding: 50px 20px;
 }
 #stream h3 {
     font-size: 24px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 #stream .card {
     transition: transform 0.2s;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
 }
 #stream .card:hover {
     transform: scale(1.05);
@@ -206,6 +203,7 @@
     background-color: var(--secondary-color);
     color: var(--bg-color);
     font-size: 16px;
+    padding: 20px;
 }
 #stream .card .card-text {
     font-size: 14px;
@@ -220,7 +218,7 @@
 }
 #stream .card .btn:hover {
     background-color: var(--bg-color);
-    color: var(--text-color);
+    color: var (--text-color);
 }
 @media screen and (max-width: 768px) {
     #stream .card .card-body {
@@ -229,7 +227,6 @@
     #stream .card .btn {
         font-size: 14px;
         padding: 8px 16px;
-        margin-top: 10px;
     }
 }
 /* End of Stream Section */
@@ -238,20 +235,21 @@
 #services {
     background-color: var(--secondary-color);
     color: var(--bg-color);
-    padding: 50px 0;
+    padding: 50px 20px;
+    text-align: center;
 }
 #services h2 {
     font-size: 36px;
     margin-bottom: 20px;
-    text-align: center;
     font-style: oblique;
     font-weight: bold;
 }
 .icon-box {
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.993);
+    margin-bottom: 30px;
 }
 .icon-box .title a {
     font-size: 20px;
@@ -275,7 +273,6 @@
     .icon-box .btn {
         font-size: 14px;
         padding: 8px 16px;
-        margin-top: 10px;
     }
 }
 /* End of Services */
@@ -284,12 +281,12 @@
 #contact {
     background-color: var(--bg-color);
     color: var(--secondary-color);
-    padding: 50px 0;
+    padding: 50px 20px;
+    text-align: center;
 }
 #contact h2 {
     font-size: 36px;
     margin-bottom: 20px;
-    text-align: center;
     font-style: oblique;
     font-weight: bold;
 }
@@ -297,14 +294,16 @@
     color: var(--text-color);
     text-align: center;
     box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
-    padding: 20px 0 30px 0;
+    padding: 20px;
     background: var(--bg-color);
+    margin-bottom: 20px;
 }
 .contact .info-box i {
     font-size: 32px;
-    color: var(--text-color);
+    color: var(--primary-color);
     border-radius: 50%;
     padding: 8px;
+    margin-bottom: 10px;
 }
 .contact .info-box h3 {
     font-size: 20px;
@@ -319,13 +318,6 @@
     margin-bottom: 0;
     color: var(--primary-color);
 }
-.contact .info-box i {
-    font-size: 32px;
-    color: var(--primary-color);
-    border-radius: 50%;
-    padding: 8px;
-}
-
 #contact .form-control {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -333,6 +325,7 @@
     padding: 10px 20px;
     border-radius: 5px;
     margin-top: 20px;
+    border: 1px solid var(--secondary-color);
 }
 #contact .btn {
     background-color: var(--primary-color);
@@ -346,31 +339,18 @@
     background-color: var(--secondary-color);
     color: var(--bg-color);
 }
-
 @media screen and (max-width: 768px) {
-    #contact {
-        padding: 20px 0;
-    }
     #contact h2 {
         font-size: 24px;
-    }
-    .contact .info-box {
-        margin-bottom: 20px;
     }
     .contact .info-box i {
         font-size: 24px;
     }
-    .contact .info-box p {
-        font-size: 14px;
-    }
     .contact .info-box h3 {
         font-size: 18px;
     }
-    .row iframe {
-        margin-top: 10px;
-        margin-left: 0;
-        width: 100%;
-        height: 300px;
+    .contact .info-box p {
+        font-size: 14px;
     }
     #contact .form-control {
         font-size: 14px;
@@ -401,4 +381,11 @@
     margin-bottom: 0;
     color: var(--bg-color);
 }
-/* End of Footer */
+@media screen and (max-width: 768px) {
+    .footer .social-links a {
+        font-size: 20px;
+    }
+    .footer .social-links .text p {
+        font-size: 12px;
+    }
+}
